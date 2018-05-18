@@ -8,6 +8,7 @@ import org.apache.storm.tuple.Tuple;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Demo4  implements IRichBolt{
     OutputCollector outputCollector;
@@ -30,6 +31,11 @@ public class Demo4  implements IRichBolt{
 
         this.outputCollector.ack(tuple);
 
+        System.out.println("++++++++++++++++++++++++++++");
+        Set<String> keys = this.counters.keySet();
+        for(String key : keys) {
+            System.out.println(key + "_" + this.counters.get(key));
+        }
     }
 
     @Override

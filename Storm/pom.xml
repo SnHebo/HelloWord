@@ -11,10 +11,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>Storm</artifactId>
+    <packaging>pom</packaging>
 
     <name>Storm</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
+    <modules>
+        <module>../Flink</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

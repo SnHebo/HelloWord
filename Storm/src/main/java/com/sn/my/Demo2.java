@@ -1,6 +1,5 @@
 package com.sn.my;
 
-import org.apache.storm.spout.SpoutOutputCollector;
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.IRichBolt;
@@ -23,7 +22,7 @@ public class Demo2 implements IRichBolt {
 
     @Override
     public void execute(Tuple tuple) {
-        String sentence = tuple.getString(0);
+        String sentence = tuple.getStringByField("line");
         String[] words = sentence.split(" ");
         for(String word : words) {
             word = word.trim();
